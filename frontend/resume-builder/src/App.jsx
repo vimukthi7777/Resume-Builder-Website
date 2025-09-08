@@ -20,12 +20,12 @@ const App = () => {
     </div>
 
     <Toaster 
-        toastOptions={(
+        toastOptions={{
           className: "",
           style: {
             fontSize: "13px",
-          }
-        )}
+          },
+        }}
       />
     </>
   )
