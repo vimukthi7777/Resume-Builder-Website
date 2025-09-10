@@ -13,3 +13,13 @@ If you are developing a production application, we recommend using TypeScript wi
 
 used installs
 npm i axios moment html2canvas react-hot-toast react-icons react-router-dom react-to-print
+
+backend
+npm init -y
+
+npm i express bcryptjs cors dotenv jsonwebtoken mongoose multer
+
+npm i nodemon --save-dev
+
+
+back end jwt - node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"

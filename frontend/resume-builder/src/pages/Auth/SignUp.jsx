@@ -62,7 +62,7 @@ const SignUp = ({ setCurrentPage }) => {
               value={fullName}
               onChange={({ target }) => setFullName(target.value)}
               label="Full Name"
-              placeholder="John"
+              placeholder="Enter your full name"
               type="text"
               />
 
@@ -70,7 +70,7 @@ const SignUp = ({ setCurrentPage }) => {
               value={email}
               onChange={({ target }) => setEmail(target.value)}
               label="Email Address"
-              placeholder="Vimu@gmail.com"
+              placeholder="vimu@gmail.com"
               type="text"
               />
 
