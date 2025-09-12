@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getLightColorFromImage } from '../../utils/helper';
 
 const ResumeSummaryCard = ({
             imgUrl,
@@ -6,8 +7,22 @@ const ResumeSummaryCard = ({
             lastUpdated,
             onSelect,}) => {
 
+        const [bgColor, setBgColor] = useState("#ffffff");
+
+        useEffect(() => {
+            if (imgUrl) {
+                getLightColorFromImage(imgUrl).then((color) => {
+                    setBgColor(color);
+                })
+                .catch(() => {
+                    setBgColor("ffffff")
+                });
+            }
+        }, [imgUrl]);
+
   return <div className='h-[300px] flex flex-col items-center justify-between bg-white rounded-lg border border-gray-200 hover:border-blue-300 overflow-hidden cursor-pointer' 
-            onClick={onSelect}
+              style={{backgroundColor: bgColor}}
+              onClick={onSelect}
         >
       <div className='p-4'>
                 {imgUrl ? (
