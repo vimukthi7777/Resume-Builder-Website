@@ -4,9 +4,9 @@ import HERO_IMG from '../assets/hero.png';
 import { useNavigate } from 'react-router-dom'
 import Login from './Auth/Login';
 import SignUp from './Auth/SignUp';
-import Model from '../components/Model';
 import { UserContext } from '../context/userContext';
 import ProfileInfoCard from '../components/Cards/ProfileInfoCard';
+import Modal from '../components/Modal';
 
 const LandingPage = () => {
   const { user } = useContext(UserContext);
@@ -90,7 +90,7 @@ const LandingPage = () => {
         &lt; Develop by Vimukthi &gt; 
       </div>
 
-      <Model
+      <Modal
         isOpen={openAuthModel}
         onClose={() => {
           setOpenAuthModel(false);
@@ -103,7 +103,7 @@ const LandingPage = () => {
             {currentPage === "signup" && (<SignUp setCurrentPage={setCurrentPage}/>
             )}
           </div>
-      </Model>
+      </Modal>
     </div>
   );
 };

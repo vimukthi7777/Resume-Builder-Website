@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Model = ({
+const Modal = ({
     children,
     isOpen,
     onClose,
@@ -51,4 +51,4 @@ const Model = ({
         
 };
 
-export default Model;
+export default Modal;
