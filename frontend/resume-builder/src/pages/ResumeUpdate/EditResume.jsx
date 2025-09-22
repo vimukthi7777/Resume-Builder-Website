@@ -16,7 +16,7 @@ import TitleInput from '../../components/Inputs/TitleInput';
 import { useReactToPrint } from "react-to-print";
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
-import StepProgress from '../../components/ResumeTemplates/StepProgress';
+import StepProgress from '../../components/StepProgress';
 import ProfileInfoForm from './Forms/ProfileInfoForm';
 import ContactInfoForm from './Forms/ContactInfoForm';
 import WorkExperienceForm from './Forms/WorkExperienceForm';
@@ -25,6 +25,7 @@ import SkillsInfoForm from './Forms/SkillsInfoForm';
 import ProjectsDetailForm from './Forms/ProjectsDetailForm';
 import CertificationInfoForm from './Forms/CertificationInfoForm';
 import AdditionalInfoForm from './Forms/AdditionalInfoForm';
+import RenderResume from '../../components/ResumeTemplates/RenderResume';
 
 
 const EditResume = () => {
@@ -482,7 +483,11 @@ const EditResume = () => {
   const reactToPrintFn = useReactToPrint({contentRef: resumeDownloadRef});
 
   //Function to update baseWidth pn the resume container size
-  const updateBaseWidth = () => {};
+  const updateBaseWidth = () => {
+    if(resumeRef.current) {
+      setBaseWidth(resumeRef.current.offsetWidth)
+    }
+  };
 
   useEffect(() => {
     updateBaseWidth();
@@ -529,7 +534,7 @@ const EditResume = () => {
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-        <div className='bg-white rounded-lg border border-blue-100 overflow-hidden'>
+        {/*<div className='bg-white rounded-lg border border-blue-100 overflow-hidden'>
 
           <StepProgress progress={progress} />
 
@@ -558,11 +563,16 @@ const EditResume = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div>*/}
         <div ref={resumeRef} className='h-[100vh]'>
             {/* Resume Template */}
 
-            
+            <RenderResume
+              templateId={resumeData?.template?.theme || ""}
+              resumeData={resumeData}
+              colorPalette={resumeData?.template.colorPalette || []}
+              containerWidth={baseWidth}
+            />
         </div>
       </div>
     </div>
