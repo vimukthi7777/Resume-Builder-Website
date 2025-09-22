@@ -534,7 +534,7 @@ const EditResume = () => {
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-        {/*<div className='bg-white rounded-lg border border-blue-100 overflow-hidden'>
+        <div className='bg-white rounded-lg border border-blue-100 overflow-hidden'>
 
           <StepProgress progress={progress} />
 
@@ -563,7 +563,7 @@ const EditResume = () => {
               </button>
             </div>
           </div>
-        </div>*/}
+        </div>
         <div ref={resumeRef} className='h-[100vh]'>
             {/* Resume Template */}
 
