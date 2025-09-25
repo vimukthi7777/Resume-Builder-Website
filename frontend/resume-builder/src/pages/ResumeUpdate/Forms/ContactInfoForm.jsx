@@ -29,7 +29,7 @@ const ContactInfoForm = ({contactInfo, updateSection}) => {
 
                 <Input 
                     label="Phone Number"
-                    placeholder="0762589456"
+                    placeholder="+94 71 0909 876"
                     type="text"
                     value={contactInfo.phone || ""}
                     onChange={({target}) => updateSection("phone", target.value)}

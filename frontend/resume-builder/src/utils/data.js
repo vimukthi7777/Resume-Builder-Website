@@ -1,6 +1,6 @@
 import TEMPLATE_ONE_IMG from '../assets/template-one.jpg'
 import TEMPLATE_TWO_IMG from '../assets/template-two.jpg'
-import TEMPLATE_THREE_IMG from '../assets/template-three.png'
+import TEMPLATE_THREE_IMG from '../assets/template-three.jpg'
 
 export const resumeTemplates = [
     {
