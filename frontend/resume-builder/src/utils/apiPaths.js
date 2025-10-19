@@ -1,4 +1,4 @@
-export const BASE_URL = "https://resume-builder-website-chi.vercel.app";
+export const BASE_URL = process.env.BASE_URL;
 
 // utils/apiPaths.js
 export const API_PATHS = {
